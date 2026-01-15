@@ -1,9 +1,9 @@
 {
-    "$schema": "../../../../quintauris_community/meta/machine.schema.json",
+    "$schema": "../../../../quintauris/meta/machine.schema.json",
     "name": "qemu_virt",
     "cpus": [
         {
-            "include": "quintauris_community/model/rt_europa/model.json"
+            "include": "quintauris/model/rt_europa/model.json"
         }
     ],
     "memory_regions": [
