@@ -9,6 +9,9 @@ jobs:
   build:
     container:
       image: ghcr.io/quintauris-tech/rvbl-gcc:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
