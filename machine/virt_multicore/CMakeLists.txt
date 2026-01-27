@@ -28,6 +28,9 @@ set_property(
 add_subdirectory(../../../base/lib ${CMAKE_CURRENT_BINARY_DIR}/base/lib)
 add_subdirectory(../../../quintauris_internal/lib
                  ${CMAKE_CURRENT_BINARY_DIR}/quintauris_internal/lib)
+add_subdirectory(../../../riscv/lib/abi ${CMAKE_CURRENT_BINARY_DIR}/lib/abi)
+add_subdirectory(../../../riscv/lib/interrupt
+                 ${CMAKE_CURRENT_BINARY_DIR}/lib/interrupt)
 add_subdirectory(../../../national_semiconductor/lib
                  ${CMAKE_CURRENT_BINARY_DIR}/national_semiconductor/lib)
 
