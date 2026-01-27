@@ -31,6 +31,8 @@ add_subdirectory(../../../quintauris_internal/lib
 add_subdirectory(../../../riscv/lib/abi ${CMAKE_CURRENT_BINARY_DIR}/lib/abi)
 add_subdirectory(../../../riscv/lib/interrupt
                  ${CMAKE_CURRENT_BINARY_DIR}/lib/interrupt)
+add_subdirectory(../../../riscv/lib/semihost
+                 ${CMAKE_CURRENT_BINARY_DIR}/riscv/lib/semihost)
 add_subdirectory(../../../national_semiconductor/lib
                  ${CMAKE_CURRENT_BINARY_DIR}/national_semiconductor/lib)
 
