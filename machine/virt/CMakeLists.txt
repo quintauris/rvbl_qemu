@@ -26,6 +26,8 @@ set_property(
            mon:stdio)
 
 add_subdirectory(../../../base/lib ${CMAKE_CURRENT_BINARY_DIR}/base/lib)
+add_subdirectory(../../../base/lib/ns16550
+                 ${CMAKE_CURRENT_BINARY_DIR}/base/lib_ns16550)
 add_subdirectory(../../../quintauris_internal/lib
                  ${CMAKE_CURRENT_BINARY_DIR}/quintauris_internal/lib)
 add_subdirectory(../../../riscv/lib/abi ${CMAKE_CURRENT_BINARY_DIR}/lib/abi)
@@ -33,8 +35,6 @@ add_subdirectory(../../../riscv/lib/interrupt
                  ${CMAKE_CURRENT_BINARY_DIR}/lib/interrupt)
 add_subdirectory(../../../riscv/lib/semihost
                  ${CMAKE_CURRENT_BINARY_DIR}/riscv/lib/semihost)
-add_subdirectory(../../../national_semiconductor/lib
-                 ${CMAKE_CURRENT_BINARY_DIR}/national_semiconductor/lib)
 
 add_library(
   rvbl_machine STATIC
