@@ -1,29 +1,28 @@
 cmake_minimum_required(VERSION 3.28)
-project(qemu_virt LANGUAGES C ASM)
+project(qemu_virt_multicore LANGUAGES C ASM)
 enable_testing()
 
 set(host_tools
-    "${CMAKE_SOURCE_DIR}/../host/build"
+    "${CMAKE_SOURCE_DIR}/../../../build/local/tool"
     CACHE STRING "Host tools build folder.")
 
 include(../../../base/cmake/support.cmake)
 
-rvbl_run_generators()
+rvbl_machine(
+  QEMU_SETTINGS
+  -machine
+  virt
+  -smp
+  4
+  -m
+  16M
+  -semihosting-config
+  enable=on
+  -nographic
+  -serial
+  mon:stdio)
 
-set_property(
-  GLOBAL
-  PROPERTY qemu_machine_settings
-           -machine
-           virt
-           -smp
-           1
-           -m
-           16M
-           -semihosting-config
-           enable=on
-           -nographic
-           -serial
-           mon:stdio)
+rvbl_run_generators()
 
 add_subdirectory(../../../base/lib ${CMAKE_CURRENT_BINARY_DIR}/base/lib)
 add_subdirectory(../../../base/lib/ns16550
