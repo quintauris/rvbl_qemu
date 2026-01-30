@@ -1,0 +1,19 @@
+{
+    "runners": {
+        "^qemu.system32-": {
+            "default": [
+                "-machine",
+                "virt",
+                "-smp",
+                "4",
+                "-m",
+                "16M",
+                "-semihosting-config",
+                "enable=on",
+                "-nographic",
+                "-serial",
+                "mon:stdio"
+            ]
+        }
+    }
+}

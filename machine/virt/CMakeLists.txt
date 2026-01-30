@@ -8,20 +8,7 @@ set(host_tools
 
 include(../../../base/cmake/support.cmake)
 
-rvbl_machine(
-  QEMU_SETTINGS
-  -machine
-  virt
-  -smp
-  1
-  -m
-  16M
-  -semihosting-config
-  enable=on
-  -nographic
-  -serial
-  mon:stdio)
-
+rvbl_machine(RUNNERS qemu)
 rvbl_run_generators()
 
 add_subdirectory(../../../base/lib ${CMAKE_CURRENT_BINARY_DIR}/base/lib)
