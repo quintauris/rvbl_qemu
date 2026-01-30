@@ -21,6 +21,8 @@ add_subdirectory(../../../riscv/lib/interrupt
                  ${CMAKE_CURRENT_BINARY_DIR}/lib/interrupt)
 add_subdirectory(../../../riscv/lib/semihost
                  ${CMAKE_CURRENT_BINARY_DIR}/riscv/lib/semihost)
+add_subdirectory(../../../riscv/lib/aclint
+                 ${CMAKE_CURRENT_BINARY_DIR}/lib/aclint)
 
 add_library(
   rvbl_machine STATIC
