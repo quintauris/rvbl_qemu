@@ -6,7 +6,7 @@ define symbol HEAP_SIZE = 4096;
 define memory Mem with size = 4G;
 
 include "memory.IAR.ld";
-include "sections.IAR.ld";
+include "sections.ld";
 
 place at start of rom0 { section .text.start, section .rodata.start };
 place in flash0 { block ROM_CONTENT };
