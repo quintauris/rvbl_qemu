@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.28)
 project(qemu_virt_multicore LANGUAGES C ASM)
 enable_testing()
 
-set(host_tools
-    "${CMAKE_SOURCE_DIR}/../../../build/local/tool"
-    CACHE STRING "Host tools build folder.")
-
 include(../../../base/cmake/support.cmake)
 
 rvbl_machine(RUNNERS qemu)
