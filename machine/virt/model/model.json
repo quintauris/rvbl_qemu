@@ -62,12 +62,6 @@
             "stage": "compile",
             "class": "uint32",
             "value": "1"
-        },
-        {
-            "name": "dhrystone_iterations",
-            "stage": "compile",
-            "class": "uint32",
-            "value": "20m"
         }
     ]
 }

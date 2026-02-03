@@ -23,6 +23,8 @@ add_subdirectory(../../../riscv/lib/semihost
                  ${CMAKE_CURRENT_BINARY_DIR}/riscv/lib/semihost)
 add_subdirectory(../../../riscv/lib/aclint
                  ${CMAKE_CURRENT_BINARY_DIR}/lib/aclint)
+add_subdirectory(../../../quintauris/lib/dhrystone
+                 ${CMAKE_CURRENT_BINARY_DIR}/quintauris/lib/dhrystone)
 
 add_library(
   rvbl_machine STATIC
