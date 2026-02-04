@@ -4,31 +4,16 @@ enable_testing()
 
 include(../../../base/cmake/support.cmake)
 
-rvbl_machine(RUNNERS qemu)
-rvbl_run_generators()
+rvbl_machine(LIBRARIES semihost uart_ns16550 RUNNERS qemu)
 
-add_subdirectory(../../../base/lib ${CMAKE_CURRENT_BINARY_DIR}/base/lib)
-add_subdirectory(../../../base/lib/ns16550
-                 ${CMAKE_CURRENT_BINARY_DIR}/base/lib_ns16550)
-add_subdirectory(../../../quintauris_internal/lib
-                 ${CMAKE_CURRENT_BINARY_DIR}/quintauris_internal/lib)
-add_subdirectory(../../../riscv/lib/abi ${CMAKE_CURRENT_BINARY_DIR}/lib/abi)
-add_subdirectory(../../../riscv/lib/interrupt
-                 ${CMAKE_CURRENT_BINARY_DIR}/lib/interrupt)
-add_subdirectory(../../../riscv/lib/semihost
-                 ${CMAKE_CURRENT_BINARY_DIR}/riscv/lib/semihost)
-add_subdirectory(../../../riscv/lib/aclint
-                 ${CMAKE_CURRENT_BINARY_DIR}/lib/aclint)
-add_subdirectory(../../../quintauris/lib/dhrystone
-                 ${CMAKE_CURRENT_BINARY_DIR}/quintauris/lib/dhrystone)
-
-add_library(
-  rvbl_machine STATIC
-  ${generated_files} "${CMAKE_CURRENT_SOURCE_DIR}/source/rvbl_configuration.c"
-  "${CMAKE_CURRENT_SOURCE_DIR}/source/rvbl_test.c")
-target_include_directories(
-  rvbl_machine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/generated/include")
-target_link_libraries(rvbl_machine PUBLIC rvbl_core rvbl_boot rvbl_uart_ns16550
-                                          rvbl_semihost)
+rvbl_use(
+  base/lib
+  base/lib/ns16550
+  quintauris_internal/lib
+  riscv/lib/abi
+  riscv/lib/interrupt
+  riscv/lib/semihost
+  riscv/lib/aclint
+  quintauris/lib/dhrystone)
 
 add_subdirectory(example)
