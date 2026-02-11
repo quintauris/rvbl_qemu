@@ -39,7 +39,7 @@
             "HART_COUNT": "1"
         },
         {
-            "include": "base/model/ns16550/model.json",
+            "include": "core/model/ns16550/model.json",
             "INSTANCE": "default",
             "BASE": "0x10000000"
         }
