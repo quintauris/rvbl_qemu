@@ -15,5 +15,6 @@
                 "mon:stdio"
             ]
         }
-    }
+    },
+    "default_toolchain_target": "riscv32_ilp32"
 }
