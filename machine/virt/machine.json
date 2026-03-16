@@ -16,5 +16,5 @@
             ]
         }
     },
-    "default_toolchain_target": "riscv32_ilp32"
+    "default_toolchain_target": "rt_europa_m32"
 }
