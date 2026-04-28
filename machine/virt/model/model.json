@@ -39,7 +39,7 @@
             "HART_COUNT": "1"
         },
         {
-            "include": "core/model/ns16550/model.json",
+            "include": "qemu/model/ns16550/model.json",
             "INSTANCE": "default",
             "BASE": "0x10000000"
         }
