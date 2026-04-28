@@ -1,5 +1,5 @@
 {
-    "$schema": "../../../../quintauris/meta/machine.schema.json",
+    "$schema": "../../../../core/meta/machine.schema.json",
     "name": "qemu_virt",
     "cpus": [
         {
