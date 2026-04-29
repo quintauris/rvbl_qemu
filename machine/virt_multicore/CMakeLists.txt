@@ -14,6 +14,7 @@ rvbl_use(
   riscv/lib/interrupt
   riscv/lib/semihost
   riscv/lib/aclint
-  quintauris/lib/dhrystone)
+  quintauris/lib/dhrystone
+  riscv/lib/memory)
 
 add_subdirectory(example)

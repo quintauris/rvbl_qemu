@@ -14,6 +14,7 @@ rvbl_use(
   riscv/lib/abi
   riscv/lib/interrupt
   riscv/lib/semihost
-  riscv/lib/aclint)
+  riscv/lib/aclint
+  riscv/lib/memory)
 
 add_subdirectory(example)
