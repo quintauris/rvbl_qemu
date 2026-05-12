@@ -62,6 +62,12 @@
             "stage": "compile",
             "class": "uint32",
             "value": "1"
+        },
+        {
+            "name": "has_mode_supervisor",
+            "stage": "compile",
+            "class": "uint32",
+            "value": "1"
         }
     ]
 }
