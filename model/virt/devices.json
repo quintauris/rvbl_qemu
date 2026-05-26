@@ -1,0 +1,17 @@
+[
+    {
+        "include": "riscv/model/aclint/model.json",
+        "INSTANCE": "default",
+        "BASE": "0x02000000",
+        "MTIMER_TIME_OFFSET": "0xBFF8",
+        "MTIMER_COMPARE_OFFSET": "0x4000",
+        "MSWI_MSIP_OFFSET": "0x0000",
+        "SSWI_SETSSIP_OFFSET": "0x0000",
+        "HART_COUNT": "1"
+    },
+    {
+        "include": "qemu/model/ns16550/model.json",
+        "INSTANCE": "default",
+        "BASE": "0x10000000"
+    }
+]

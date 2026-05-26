@@ -1,0 +1,35 @@
+{
+    "$schema": "../../../core/meta/machine.schema.json",
+    "name": "qemu_virt_em_altair_m32",
+    "cpus": [
+        {
+            "include": "quintauris/model/em_altair/model.json"
+        }
+    ],
+    "memory_regions": {
+        "include": "qemu/model/virt/memory_regions.json"
+    },
+    "devices": {
+        "include": "qemu/model/virt/devices.json"
+    },
+    "parameters": [
+        {
+            "name": "mtime_frequency",
+            "stage": "compile",
+            "class": "uint32",
+            "value": "10m"
+        },
+        {
+            "name": "hart_count",
+            "stage": "compile",
+            "class": "uint32",
+            "value": "1"
+        },
+        {
+            "name": "cache_instructions_supported",
+            "stage": "compile",
+            "class": "uint32",
+            "value": "0"
+        }
+    ]
+}

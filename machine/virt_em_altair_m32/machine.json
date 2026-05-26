@@ -4,8 +4,10 @@
             "default": [
                 "-machine",
                 "virt",
+                "-cpu",
+                "rv32i,b=on,f=on,m=on,u=on,zalrsc=on,zce=on,zcf=on,zcmop=on,zfa=on,zfbfmin=on,zfh=on,zicntr=on,zicond=on,zicsr=on,zifencei=on,zihintpause=on,zihpm=on,pmp=on,smepmp=off,smrnmi=off,smcdeleg=on,smcntrpmf=on,smdbltrp=on,sstc=on,priv_spec=v1.13.0",
                 "-smp",
-                "4",
+                "1",
                 "-m",
                 "16M",
                 "-semihosting-config",
@@ -16,5 +18,5 @@
             ]
         }
     },
-    "default_toolchain_target": "rt_europa_m32"
+    "default_toolchain_target": "em_altair_m32"
 }

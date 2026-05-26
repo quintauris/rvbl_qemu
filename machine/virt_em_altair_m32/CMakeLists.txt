@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(qemu_virt LANGUAGES C ASM)
+project(qemu_virt_em_altair_m32 LANGUAGES C ASM)
 enable_testing()
 
 include(../../../core/cmake/support.cmake)

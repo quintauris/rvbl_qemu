@@ -4,6 +4,8 @@
             "default": [
                 "-machine",
                 "virt",
+                "-cpu",
+                "rv32i,u=on,a=on,b=on,m=on,zicbom=on,zicbop=on,zicboz=on,zicsr=on,zce=on,zimop=on,zcmop=on,zihintpause=on,zicntr=on,zihpm=on,zicond=on,zihintntl=on,s=on,zifencei=on,sstc=on,pmp=on,smepmp=off,smrnmi=off,priv_spec=v1.13.0",
                 "-smp",
                 "1",
                 "-m",
