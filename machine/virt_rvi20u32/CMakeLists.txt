@@ -10,7 +10,6 @@ rvbl_use(
   core/lib
   core/lib/ns16550
   core/lib/uart_semihost
-  quintauris/lib/dhrystone
   riscv/lib/abi
   riscv/lib/interrupt
   riscv/lib/semihost

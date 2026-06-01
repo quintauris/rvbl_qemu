@@ -49,25 +49,10 @@ const rvbl_test_interrupt_control rvbl_test_machine_interrupt_control = {
     .cleanup_interrupt = rvbl_test_machine_supervisor_software_interrupt_cleanup,
 };
 
-static void rvbl_test_supervisor_supervisor_software_interrupt_prepare(void)
-{
-    rvbl_sie_ssie_set();
-}
-
-static void rvbl_test_supervisor_supervisor_software_interrupt_trigger(void)
-{
-    rvbl_sip_ssip_set();
-}
-
-static void rvbl_test_supervisor_supervisor_software_interrupt_cleanup(void)
-{
-    rvbl_sie_ssie_clear();
-}
-
 const rvbl_test_interrupt_control rvbl_test_supervisor_interrupt_control = {
-    .can_trigger_interrupt = rvbl_true,
-    .interrupt_code = mcause_code_values_Interrupt_SupervisorSoftware,
-    .prepare_interrupt = rvbl_test_supervisor_supervisor_software_interrupt_prepare,
-    .trigger_interrupt = rvbl_test_supervisor_supervisor_software_interrupt_trigger,
-    .cleanup_interrupt = rvbl_test_supervisor_supervisor_software_interrupt_cleanup,
+    .can_trigger_interrupt = rvbl_false,
+    .interrupt_code = 0,
+    .prepare_interrupt = NULL,
+    .trigger_interrupt = NULL,
+    .cleanup_interrupt = NULL,
 };

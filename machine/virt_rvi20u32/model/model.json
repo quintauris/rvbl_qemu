@@ -3,7 +3,7 @@
     "name": "qemu_virt",
     "cpus": [
         {
-            "include": "quintauris/model/rt_europa/model.json"
+            "include": "riscv/model/rvi20u32/model.json"
         }
     ],
     "memory_regions": [
@@ -61,13 +61,7 @@
             "name": "cache_instructions_supported",
             "stage": "compile",
             "class": "uint32",
-            "value": "1"
-        },
-        {
-            "name": "has_mode_supervisor",
-            "stage": "compile",
-            "class": "uint32",
-            "value": "1"
+            "value": "0"
         }
     ]
 }
