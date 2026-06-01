@@ -1,0 +1,22 @@
+{
+    "runners": {
+        "^qemu.system32-": {
+            "default": [
+                "-machine",
+                "virt",
+                "-cpu",
+                "rv32i,u=on,a=on,m=on,zifencei=on,zicntr=on,zicsr=on,zce=on,pmp=on,priv_spec=v1.13.0",
+                "-smp",
+                "1",
+                "-m",
+                "16M",
+                "-semihosting-config",
+                "enable=on",
+                "-nographic",
+                "-serial",
+                "mon:stdio"
+            ]
+        }
+    },
+    "default_toolchain_target": "rvi20u32"
+}
