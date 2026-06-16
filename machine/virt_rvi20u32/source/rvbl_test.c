@@ -6,7 +6,7 @@
 static const rvbl_uart *uart = NULL;
 static rvbl_pointer_t instance = NULL;
 
-static void enable_pmp()
+static void enable_pmp(void)
 {
     __asm__ volatile("csrw pmpaddr0, %0\n\t"
                      "csrw pmpaddr1, %1\n\t"
@@ -28,6 +28,8 @@ void rvbl_test_initialize(void)
 
 void rvbl_test_putc(int c, void *p)
 {
+    (void)p;
+
     if (uart != NULL) {
         while (!uart->tx_ready(instance, NULL)) {
         }
