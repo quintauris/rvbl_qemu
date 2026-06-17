@@ -1,3 +1,9 @@
+/*
+ * Copyright 2026 Quintauris GmbH
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * https://www.apache.org/licenses/LICENSE-2.0
+ */
+
 #include "rvbl/boot/rvbl_boot.h"
 
 extern rvbl_pointer_t text_begin_flash, text_end_flash, text_begin_dram;
