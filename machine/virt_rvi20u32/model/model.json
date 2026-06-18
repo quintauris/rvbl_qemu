@@ -1,6 +1,7 @@
 {
     "$schema": "../../../../core/meta/machine.schema.json",
     "name": "qemu_virt",
+    "$comment": "Copyright 2026 Quintauris GmbH. Licensed under the Apache License, Version 2.0 (the \"License\", https://www.apache.org/licenses/LICENSE-2.0)",
     "cpus": [
         {
             "include": "riscv/model/rvi20u32/model.json"
