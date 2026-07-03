@@ -1,0 +1,22 @@
+{
+    "programs": [
+        "qemu-system-riscv32-$machine",
+        "qemu-system-riscv32"
+    ],
+    "parameters": {
+        "default": [
+            "-bios",
+            "none",
+            "-drive",
+            "if=pflash,format=raw,unit=0,file.filename=$file"
+        ],
+        "debug": [
+            "-bios",
+            "none",
+            "-drive",
+            "if=pflash,format=raw,unit=0,file.filename=$file",
+            "-s",
+            "-S"
+        ]
+    }
+}

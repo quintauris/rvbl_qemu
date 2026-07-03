@@ -1,0 +1,18 @@
+{
+    "programs": [
+        "qemu-system-riscv32-$machine",
+        "qemu-system-riscv32"
+    ],
+    "parameters": {
+        "default": [
+            "-bios",
+            "$file"
+        ],
+        "debug": [
+            "-bios",
+            "$file",
+            "-s",
+            "-S"
+        ]
+    }
+}

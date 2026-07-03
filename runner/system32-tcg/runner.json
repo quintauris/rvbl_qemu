@@ -1,0 +1,20 @@
+{
+    "programs": [
+        "run-qemu-system-riscv32"
+    ],
+    "parameters": {
+        "default": [
+            "$filename_we",
+            "-plugin",
+            "/usr/local/lib/libstf.so,mode=dyn_insn_count,outfile=/dev/null,start_dyn_insn=1,num_instructions=18446744073709551615",
+            "-d",
+            "plugin",
+            "-bios",
+            "$file_canonical"
+        ]
+    },
+    "prepend": true,
+    "docker": {
+        "container": "qemu.system32.tcg"
+    }
+}
