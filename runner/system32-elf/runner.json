@@ -14,5 +14,8 @@
             "-s",
             "-S"
         ]
+    },
+    "docker": {
+        "container": "qemu-system-riscv32"
     }
 }
