@@ -28,7 +28,7 @@
             "execute": true
         }
     ],
-    "devices": [
+    "peripherals": [
         {
             "include": "riscv/model/aclint/model.json",
             "INSTANCE": "default",
