@@ -7,7 +7,7 @@
             "include": "riscv/model/rvi20u32/model.json"
         }
     ],
-    "memory_regions": [
+    "memory_map": [
         {
             "name": "rom0",
             "base": "0x20000000",
