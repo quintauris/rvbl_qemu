@@ -1,5 +1,9 @@
 [
     {
+        "include": "riscv/model/rvi20u32/model.json",
+        "INSTANCE": "hart0"
+    },
+    {
         "include": "riscv/model/aclint/model.json",
         "INSTANCE": "default",
         "BASE": "0x02000000",
