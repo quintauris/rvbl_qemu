@@ -5,6 +5,7 @@
  */
 
 #include "rvbl/test/rvbl_test.h"
+#include "rvbl/hardware/rvbl_hardware.h"
 #include "rvbl/machine/rvbl_machine.h"
 #include "rvbl/semihost/rvbl_semihost.h"
 #include "rvbl/uart/rvbl_uart_ns16550.h"
@@ -43,15 +44,24 @@ void rvbl_test_putc(int c, void *p)
     }
 }
 
-static void rvbl_test_machine_supervisor_software_interrupt_prepare(void) { rvbl_mie_ssie_set(); }
+static void rvbl_test_machine_supervisor_software_interrupt_prepare(void)
+{
+    RVBL_REGISTER_FIELD_SET(riscv_hart, privileged, &rvbl_riscv_hart_instance_0, mie, ssie);
+}
 
-static void rvbl_test_machine_supervisor_software_interrupt_trigger(void) { rvbl_mip_ssip_set(); }
+static void rvbl_test_machine_supervisor_software_interrupt_trigger(void)
+{
+    RVBL_REGISTER_FIELD_SET(riscv_hart, privileged, &rvbl_riscv_hart_instance_0, mip, ssip);
+}
 
-static void rvbl_test_machine_supervisor_software_interrupt_cleanup(void) { rvbl_mie_ssie_clear(); }
+static void rvbl_test_machine_supervisor_software_interrupt_cleanup(void)
+{
+    RVBL_REGISTER_FIELD_CLEAR(riscv_hart, privileged, &rvbl_riscv_hart_instance_0, mie, ssie);
+}
 
 const rvbl_test_interrupt_control rvbl_test_machine_interrupt_control = {
     .can_trigger_interrupt = rvbl_true,
-    .interrupt_code = mcause_code_values_Interrupt_SupervisorSoftware,
+    .interrupt_code = rvbl_riscv_hart_privileged_mcause_code_values_Interrupt_SupervisorSoftware,
     .prepare_interrupt = rvbl_test_machine_supervisor_software_interrupt_prepare,
     .trigger_interrupt = rvbl_test_machine_supervisor_software_interrupt_trigger,
     .cleanup_interrupt = rvbl_test_machine_supervisor_software_interrupt_cleanup,
