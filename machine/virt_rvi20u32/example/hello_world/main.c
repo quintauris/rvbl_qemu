@@ -13,7 +13,7 @@ int main(void)
     const char *hello = "Hello world!\n";
     const char *p = hello;
 
-    while (rvbl_mhartid_read() != 0) {
+    while (RVBL_REGISTER_READ(riscv_hart, privileged, &rvbl_riscv_hart_instance_0, mhartid) != 0) {
     }
 
     rvbl_semihost_initialize();

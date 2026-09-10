@@ -1,7 +1,7 @@
 [
     {
         "include": "riscv/model/rvi20u32/model.json",
-        "INSTANCE": "hart0"
+        "INSTANCE": "0"
     },
     {
         "include": "riscv/model/aclint/model.json",
