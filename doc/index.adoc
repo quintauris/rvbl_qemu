@@ -1,0 +1,85 @@
+////
+  Copyright 2026 Quintauris GmbH
+  Licensed under the Apache License, Version 2.0 (the "License").
+  https://www.apache.org/licenses/LICENSE-2.0
+////
+
+include::common.adoc[]
+
+= The QEmu Layer
+Quintauris <www.quintauris.com> (generated {localdatetime})
+
+== Overview
+
+This layer provides the following elements based upon the {qemu} system emulator project:
+
+* Machine model, configuration and examples
+* NS1650 UART model
+* ELF and BIN runners
+
+== Requirements
+
+* {qemu} v10.0.2 (earlier and later versions not tested)
+
+
+== Machines
+
+=== `virt_rvi20u32`
+
+This emulated RISC-V machine provides:
+
+* 1 RVI20U32 RISC-V HART
+* 1 ACLINT interrupt controller
+* 1 NS16550 UART
+* 4M FLASH storage
+* 12M RAM
+
+To build examples and tests for this machine, set `qemu.virt_rvi20u32` as `--machine` or `--target` parameter:
+
+```
+$ rave make <toolchain options> --machine qemu.virt_rvi20u32 --configure --build
+```
+
+For example:
+
+```
+$ rave make --toolchain gnu.gcc --toolchain-target default --machine qemu.virt_rvi20u32 --configure --build
+```
+
+Then tests can be ran as follows:
+
+```
+rave make --test --test-filter qemu
+```
+
+== Runners
+
+=== `system32-elf`
+
+This runner enables `rave` to dinamically start a QEmu-emulated `virt_rvi20u23` machine, load a designated executable file in ELF format into its address space, and optionally start execution:
+
+```
+$ rave run --runner qemu.system32-elf --machine qemu.virt_rvi20u32 --file build/local/llvm_clang/qemu_virt_rvi20u32/example/hello_world/hello_world.elf
+...
+Hello world!
+[*] Command completed successfully
+```
+
+It is also possible to load the executable in debug mode (execution stops at first instruction, GDB protocol ports are opened) by adding the `--debug` command line flag.
+
+=== `system32-bin`
+
+This runner is similar to `system32-elf` above, but it places bytes from the designated file as the contents of the machine's persistent memory device:
+
+```
+$ rave run --runner qemu.system32-bin --machine qemu.virt_rvi20u32 --file build/local/llvm_clang/qemu_virt_rvi20u32/example/hello_world/hello_world.bin
+...
+Hello world!
+[*] Command completed successfully
+```
+
+Similarly to `system32-elf`, this runnner supports loading the executable in debug mode via the `--debug` flag.
+
+== Models
+
+include::generated/ns16550_model.adoc[leveloffset=+1]
