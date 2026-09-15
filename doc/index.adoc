@@ -83,3 +83,7 @@ Similarly to `system32-elf`, this runnner supports loading the executable in deb
 == Models
 
 include::generated/ns16550_model.adoc[leveloffset=+1]
+
+== Libraries
+
+include::generated/api.adoc[leveloffset=+2]

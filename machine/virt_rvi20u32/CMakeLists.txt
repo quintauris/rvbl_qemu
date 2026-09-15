@@ -14,8 +14,8 @@ rvbl_machine(LIBRARIES semihost uart_ns16550 RUNNERS qemu)
 
 rvbl_use(
   core/lib
-  core/lib/ns16550
   core/lib/uart_semihost
+  qemu/lib
   riscv/lib/abi
   riscv/lib/interrupt
   riscv/lib/semihost
