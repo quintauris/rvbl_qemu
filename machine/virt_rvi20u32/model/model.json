@@ -3,12 +3,73 @@
     "name": "qemu_virt",
     "$comment": "Copyright 2026 Quintauris GmbH. Licensed under the Apache License, Version 2.0 (the \"License\", https://www.apache.org/licenses/LICENSE-2.0)",
     "word_size": 32,
-    "memory_map": {
-        "include": "qemu/model/virt/memory_map.json"
-    },
-    "peripherals": {
-        "include": "qemu/model/virt/peripherals.json"
-    },
+    "imports": [
+        {
+            "name": "rvi20u32",
+            "file": "riscv/model/rvi20u32/model.json"
+        },
+        {
+            "name": "aclint",
+            "file": "riscv/model/aclint/model.json",
+            "substitutions": {
+                "MTIMER_TIME_OFFSET": "0xBFF8",
+                "MTIMER_COMPARE_OFFSET": "0x4000",
+                "MSWI_MSIP_OFFSET": "0x0000",
+                "SSWI_SETSSIP_OFFSET": "0x0000"
+            }
+        },
+        {
+            "name": "uart",
+            "file": "qemu/model/ns16550/model.json"
+        }
+    ],
+    "memory_map": [
+        {
+            "name": "rom0",
+            "base": "0x20000000",
+            "size": "16K",
+            "write": false,
+            "execute": true,
+            "default_register_class": "memory_mapped"
+        },
+        {
+            "name": "flash0",
+            "base": "0x20000000 + 16K",
+            "size": "4M - 16K",
+            "write": false,
+            "default_register_class": "memory_mapped"
+        },
+        {
+            "name": "ram0",
+            "base": "0x80000000",
+            "size": "12M",
+            "execute": true,
+            "default_register_class": "memory_mapped"
+        }
+    ],
+    "peripherals": [
+        {
+            "reference": "rvi20u32",
+            "substitutions": {
+                "INSTANCE": "0"
+            }
+        },
+        {
+            "reference": "aclint",
+            "substitutions": {
+                "INSTANCE": "default",
+                "BASE": "0x02000000",
+                "HART_COUNT": "1"
+            }
+        },
+        {
+            "reference": "uart",
+            "substitutions": {
+                "INSTANCE": "default",
+                "BASE": "0x10000000"
+            }
+        }
+    ],
     "parameters": [
         {
             "name": "mtime_frequency",
