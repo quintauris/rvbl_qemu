@@ -38,7 +38,8 @@
                                 "content": "Data Ready indicator."
                             },
                             "position": 0,
-                            "length": 1
+                            "length": 1,
+                            "volatile": true
                         },
                         {
                             "name": "thr_empty",
@@ -46,7 +47,8 @@
                                 "content": "THR (Transmitter Holding Register) Ready indicator."
                             },
                             "position": 5,
-                            "length": 1
+                            "length": 1,
+                            "volatile": true
                         }
                     ]
                 }
