@@ -1,7 +1,6 @@
 {
     "$schema": "../../../core/meta/peripheral.schema.json",
     "name": "uart_ns16550",
-    "instance": "$INSTANCE",
     "description": {
         "content-type": "text/markdown",
         "content": "Simple (write-only) Hardware-Software Interface model for https://en.wikipedia.org/wiki/16550_UART[NS16550] UART."
@@ -12,7 +11,7 @@
             "description": {
                 "content": "Address space for control and data registers."
             },
-            "base": "$BASE",
+            "base": "0x0",
             "size": "1K",
             "default_register_class": "memory_mapped",
             "registers": [
