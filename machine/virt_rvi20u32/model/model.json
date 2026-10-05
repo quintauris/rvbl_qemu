@@ -50,23 +50,26 @@
     "peripherals": [
         {
             "reference": "rvi20u32",
-            "substitutions": {
-                "INSTANCE": "0"
+            "peripheral": {
+                "instance": "0",
+                "base": "0"
             }
         },
         {
             "reference": "aclint",
+            "peripheral": {
+                "instance": "default",
+                "base": "0x02000000"
+            },
             "substitutions": {
-                "INSTANCE": "default",
-                "BASE": "0x02000000",
                 "HART_COUNT": "1"
             }
         },
         {
             "reference": "uart",
-            "substitutions": {
-                "INSTANCE": "default",
-                "BASE": "0x10000000"
+            "peripheral": {
+                "instance": "default",
+                "base": "0x10000000"
             }
         }
     ],
