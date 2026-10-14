@@ -21,7 +21,13 @@
                         "content": "Receiver/Transmitter Holding register."
                     },
                     "offset": "0x0",
-                    "width": 32
+                    "width": 32,
+                    "on_reset": [
+                        {
+                            "name": "$RESET",
+                            "value": "0"
+                        }
+                    ]
                 },
                 {
                     "name": "line_status",
