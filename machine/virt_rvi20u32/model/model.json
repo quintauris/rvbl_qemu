@@ -69,7 +69,19 @@
             "reference": "uart",
             "peripheral": {
                 "instance": "default",
-                "base": "0x10000000"
+                "base": "0x10000000",
+                "substitutions": {
+                    "RESET": "default"
+                }
+            }
+        }
+    ],
+    "resets": [
+        {
+            "name": "default",
+            "description": {
+                "content-type": "text/plain",
+                "content": "Default machine reset."
             }
         }
     ],
