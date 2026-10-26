@@ -13,7 +13,11 @@
             },
             "base": "0x0",
             "size": "1K",
-            "default_register_class": "memory_mapped",
+            "default": {
+                "register": {
+                    "class": "memory_mapped"
+                }
+            },
             "registers": [
                 {
                     "name": "data",
