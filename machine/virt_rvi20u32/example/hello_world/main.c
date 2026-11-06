@@ -18,12 +18,12 @@ int main(void)
 
     rvbl_semihost_initialize();
 
-    rvbl_uart_ns16550.init(&rvbl_uart_ns16550_instance_default);
+    rvbl_uart_ns16550.init(&rvbl_uart_ns16550_instance_uart_default);
 
     while (*p != '\0') {
-        while (!rvbl_uart_ns16550.tx_ready(&rvbl_uart_ns16550_instance_default, NULL)) {
+        while (!rvbl_uart_ns16550.tx_ready(&rvbl_uart_ns16550_instance_uart_default, NULL)) {
         }
-        rvbl_uart_ns16550.putc(&rvbl_uart_ns16550_instance_default, *p, NULL);
+        rvbl_uart_ns16550.putc(&rvbl_uart_ns16550_instance_uart_default, *p, NULL);
         ++p;
     }
 

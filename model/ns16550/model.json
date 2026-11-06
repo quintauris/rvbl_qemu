@@ -5,9 +5,8 @@
         "content-type": "text/markdown",
         "content": "Simple (write-only) Hardware-Software Interface model for https://en.wikipedia.org/wiki/16550_UART[NS16550] UART."
     },
-    "addressables": [
-        {
-            "name": "registers",
+    "addressables": {
+        "registers": {
             "description": {
                 "content": "Address space for control and data registers."
             },
@@ -18,31 +17,27 @@
                     "class": "memory_mapped"
                 }
             },
-            "registers": [
-                {
-                    "name": "data",
+            "registers": {
+                "data": {
                     "description": {
                         "content": "Receiver/Transmitter Holding register."
                     },
                     "offset": "0x0",
                     "width": 32,
-                    "on_reset": [
-                        {
-                            "name": "$RESET",
+                    "on_reset": {
+                        "$RESET": {
                             "value": "0"
                         }
-                    ]
+                    }
                 },
-                {
-                    "name": "line_status",
+                "line_status": {
                     "description": {
                         "content": "Line Status register."
                     },
                     "offset": "0x5",
                     "width": 8,
-                    "fields": [
-                        {
-                            "name": "data_ready",
+                    "fields": {
+                        "data_ready": {
                             "description": {
                                 "content": "Data Ready indicator."
                             },
@@ -50,8 +45,7 @@
                             "length": 1,
                             "volatile": true
                         },
-                        {
-                            "name": "thr_empty",
+                        "thr_empty": {
                             "description": {
                                 "content": "THR (Transmitter Holding Register) Ready indicator."
                             },
@@ -59,9 +53,9 @@
                             "length": 1,
                             "volatile": true
                         }
-                    ]
+                    }
                 }
-            ]
+            }
         }
-    ]
+    }
 }

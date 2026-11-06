@@ -29,7 +29,7 @@ void rvbl_test_initialize(void)
     rvbl_semihost_initialize();
 
     uart = &rvbl_uart_ns16550;
-    instance = (rvbl_pointer_t)&rvbl_uart_ns16550_instance_default;
+    instance = (rvbl_pointer_t)&rvbl_uart_ns16550_instance_uart_default;
     uart->init(instance);
 }
 
