@@ -15,12 +15,12 @@ int main(void)
     rvbl_hart_hang_if_not(0);
     rvbl_test_initialize();
 
-    rvbl_uart_ns16550.init(&rvbl_uart_ns16550_instance_default);
+    rvbl_uart_ns16550.init(&rvbl_uart_ns16550_instance_uart_default);
 
     for (const char *i = message; *i != '\0'; ++i) {
-        while (!rvbl_uart_ns16550.tx_ready(&rvbl_uart_ns16550_instance_default, NULL)) {
+        while (!rvbl_uart_ns16550.tx_ready(&rvbl_uart_ns16550_instance_uart_default, NULL)) {
         }
-        rvbl_uart_ns16550.putc(&rvbl_uart_ns16550_instance_default, *i, NULL);
+        rvbl_uart_ns16550.putc(&rvbl_uart_ns16550_instance_uart_default, *i, NULL);
     }
 
     rvbl_semihost_exit(rvbl_semihost_exit_code_success);

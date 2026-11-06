@@ -3,13 +3,11 @@
     "name": "qemu_virt",
     "$comment": "Copyright 2026 Quintauris GmbH. Licensed under the Apache License, Version 2.0 (the \"License\", https://www.apache.org/licenses/LICENSE-2.0)",
     "word_size": 32,
-    "imports": [
-        {
-            "name": "rvi20u32",
+    "imports": {
+        "rvi20u32": {
             "file": "riscv/model/rvi20u32/model.json"
         },
-        {
-            "name": "aclint",
+        "aclint": {
             "file": "riscv/model/aclint/model.json",
             "substitutions": {
                 "MTIMER_TIME_OFFSET": "0xBFF8",
@@ -18,14 +16,12 @@
                 "SSWI_SETSSIP_OFFSET": "0x0000"
             }
         },
-        {
-            "name": "uart",
+        "ns16550": {
             "file": "qemu/model/ns16550/model.json"
         }
-    ],
-    "memory_map": [
-        {
-            "name": "rom0",
+    },
+    "memory_map": {
+        "rom0": {
             "base": "0x20000000",
             "size": "16K",
             "write": false,
@@ -36,8 +32,7 @@
                 }
             }
         },
-        {
-            "name": "flash0",
+        "flash0": {
             "base": "0x20000000 + 16K",
             "size": "4M - 16K",
             "write": false,
@@ -47,8 +42,7 @@
                 }
             }
         },
-        {
-            "name": "ram0",
+        "ram0": {
             "base": "0x80000000",
             "size": "12M",
             "execute": true,
@@ -58,16 +52,16 @@
                 }
             }
         }
-    ],
-    "peripherals": [
-        {
+    },
+    "peripherals": {
+        "0": {
             "reference": "rvi20u32",
             "peripheral": {
                 "instance": "0",
                 "base": "0"
             }
         },
-        {
+        "aclint_default": {
             "reference": "aclint",
             "peripheral": {
                 "instance": "default",
@@ -77,8 +71,8 @@
                 "HART_COUNT": "1"
             }
         },
-        {
-            "reference": "uart",
+        "uart_default": {
+            "reference": "ns16550",
             "peripheral": {
                 "instance": "default",
                 "base": "0x10000000",
@@ -87,34 +81,30 @@
                 }
             }
         }
-    ],
-    "resets": [
-        {
-            "name": "default",
+    },
+    "resets": {
+        "default": {
             "description": {
                 "content-type": "text/plain",
                 "content": "Default machine reset."
             }
         }
-    ],
-    "parameters": [
-        {
-            "name": "mtime_frequency",
+    },
+    "parameters": {
+        "mtime_frequency": {
             "stage": "compile",
             "class": "uint32",
             "value": "10m"
         },
-        {
-            "name": "hart_count",
+        "hart_count": {
             "stage": "compile",
             "class": "uint32",
             "value": "1"
         },
-        {
-            "name": "cache_instructions_supported",
+        "cache_instructions_supported": {
             "stage": "compile",
             "class": "uint32",
             "value": "0"
         }
-    ]
+    }
 }
