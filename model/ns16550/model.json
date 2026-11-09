@@ -10,7 +10,6 @@
             "description": {
                 "content": "Address space for control and data registers."
             },
-            "base": "0x0",
             "size": "1K",
             "default": {
                 "register": {
