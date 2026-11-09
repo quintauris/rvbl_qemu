@@ -57,14 +57,12 @@
         "0": {
             "reference": "rvi20u32",
             "peripheral": {
-                "instance": "0",
                 "base": "0"
             }
         },
         "aclint_default": {
             "reference": "aclint",
             "peripheral": {
-                "instance": "default",
                 "base": "0x02000000"
             },
             "substitutions": {
@@ -74,7 +72,6 @@
         "uart_default": {
             "reference": "ns16550",
             "peripheral": {
-                "instance": "default",
                 "base": "0x10000000",
                 "substitutions": {
                     "RESET": "default"
