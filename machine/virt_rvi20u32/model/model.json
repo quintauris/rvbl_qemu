@@ -79,7 +79,7 @@
             }
         }
     },
-    "resets": {
+    "reset_types": {
         "default": {
             "description": {
                 "content-type": "text/plain",
