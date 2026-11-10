@@ -42,7 +42,7 @@
                             },
                             "position": 0,
                             "length": 1,
-                            "volatile": true
+                            "hw_volatile": true
                         },
                         "thr_empty": {
                             "description": {
@@ -50,7 +50,7 @@
                             },
                             "position": 5,
                             "length": 1,
-                            "volatile": true
+                            "hw_volatile": true
                         }
                     }
                 }
